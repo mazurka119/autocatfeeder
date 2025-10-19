@@ -195,46 +195,6 @@ void adjustIntervalTask(void* parameter){
 
 }
 
-// removed task to add new UID to authorized users
-// void addRFIDTask(void* parameter){
-//   while(1) {
-//     int value = digitalRead(addRFIDbutton);
-
-//     if(value == HIGH){
-//       if(!isRecognized(rfid.uid.uidByte)){
-//         saveUIDToEEPROM(rfid.uid.uidByte);
-//         lcd.print("Added new Cat");
-//       }
-//     }
-//     vTaskDelay(pdMS_TO_TICKS(1000));
-//     lcd.clear();
-//   }
-
-  
-//}
-
-// Removed task to save new UIDs to eeprom
-// void saveUIDToEEPROM(byte *uid) {
-//     for (int i = 0; i < MAX_USERS; i++) {
-//         bool emptySlot = true;
-//         for (int j = 0; j < UID_SIZE; j++) {
-//             if (EEPROM.read(i * UID_SIZE + j) != 0xFF) {
-//                 emptySlot = false;
-//                 break;
-//             }
-//         }
-//         if (emptySlot) {
-//             for (int j = 0; j < UID_SIZE; j++) {
-//                 EEPROM.write(i * UID_SIZE + j, uid[j]);
-//             }
-//             EEPROM.commit(); // Save changes to flash memory
-//             return;
-//         }
-//     }
-//     Serial.println("No space left to store new users!");
-// }
-
-
 
 /**
  * isRecognized: Checks if a UID is already in EEPROM.
